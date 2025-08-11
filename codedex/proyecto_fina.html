@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Estrella</title>
+    <style>
+        #menu img {
+            width: 100px;
+            height: 100px;
+
+        }
+
+        footer{
+            display: flex;
+            justify-content: center;
+        }
+        nav{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            
+             
+            
+        }
+        nav a {
+            text-decoration: none; 
+            color: white; 
+            font-weight: bold;
+        }
+        h1{
+            display: flex;
+            justify-content: center;
+            
+        }
+        #header-img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            
+        }
+        header{
+            position: sticky;
+            top: 0;
+            background-color: #976c6c;
+            z-index: 1000;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <img id="header-img" src="restaurante.jpg" alt="foto de el local">
+        <h1>Restaurante Estrella</h1>
+        <nav>
+            <a href="#menu">Menu</a>
+            <a href="#orden">Orden</a>
+        </nav>
+    </header>
+    <main>
+        <section id="menu">
+            <h2>Menu</h2>
+            <article>
+                <img src="polloconmole.webp" alt="polloconmole" >
+                <h3>Pollo con Mole</h3>
+                <p>Pollo con mole, una delicia mexicana <em>$100</em></p>
+            </article>
+            <article>
+                <img src="flautas de pollo.webp" alt="flautas de pollo">
+                <h3>Flautas de Pollo</h3>
+                <p>tradicionales flautas de pollo <em>$50</em></p>
+            </article>
+            <article>
+                <img src="pastel de pollo.webp" alt="pastel de pollo">
+                <h3>Pastel de Pollo</h3>
+                <p>Pastel azteca de pollo con salsa roja <em>$150</em></p>
+            </article>
+        </section>
+
+        <section id="orden">
+            <h2>Realice su pedido</h2>
+            <form action="">
+                
+                <label>Pollo con Mole: <input type="number" min="0" name="pollo_mole"></label><br>
+
+                <label>Flautas de Pollo: <input type="number" min="0" name="flautas_pollo"></label><br>
+
+                <label>Pastel de Pollo: <input type="number" min="0" name="pastel_pollo"></label><br><br>
+
+                <textarea name="notas" placeholder="Notas o Comentarios" id="" cols="30" rows="10"></textarea><br>
+                
+                <div><input type="submit" value="Ir a Caja">
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>Hecho con Amor por @Mario-Estrella 2025</p>
+    </footer>
+</body>
+</html>

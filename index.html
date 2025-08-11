@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="Encabezado">
+        <nav>
+            <button id="theme-toggle">☀️</button>
+            <button id="menu-toggle" class="menu-toggle">☰</button>
+            <ul id="menu">
+                <li><a class="Boton" href="#Hero">Inicio</a></li>
+                <li><a class="Boton" href="#Proyectos">Proyectos</a></li>
+                <li><a class="Boton" href="#Habilidades">Habilidades</a></li>
+                <li><a class="Boton" href="#Contacto">Contacto</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+        <section id="Hero">
+            <img src="foto-perfil.jpg" alt="">
+            <h1>Mario Emilio Estrella Rodriguez</h1>
+            <p>Desarrollador Web en Formación</p>
+            <button  class="Boton"><a href="#Proyectos">Mira mis Proyectos</a></button>
+
+        </section>
+        <section id="Proyectos">
+            <h2>Proyectos</h2>
+            <div class="proyectos-grid">
+
+                <article class="proyecto-card">
+                    <img src="https://via.placeholder.com/400x250.png?text=Mi+Proyecto+Web" alt="Imagen del proyecto 1">
+                    <h3>Encriptador de Texto</h3>
+                    <p>Un desafío de Alura Latam para encriptar y desencriptar texto usando HTML, CSS y JavaScript.</p>
+                    <a href="#" class="Boton">Ver Demo</a>
+                    <a href="#" class="Boton">Repositorio</a>
+                </article>
+
+                <article class="proyecto-card">
+                    <img src="https://via.placeholder.com/400x250.png?text=Análisis+de+Datos" alt="Imagen del proyecto 2">
+                    <h3>Análisis de Ventas</h3>
+                    <p>Un análisis exploratorio de datos sobre ventas utilizando Python, Pandas y Matplotlib.</p>
+                    <a href="#" class="Boton">Ver Demo</a>
+                    <a href="#" class="Boton">Repositorio</a>
+                </article>
+
+                <article class="proyecto-card">
+                    <img src="https://via.placeholder.com/400x250.png?text=Portafolio" alt="Imagen del proyecto 3">
+                    <h3>Mi Portafolio</h3>
+                    <p>Este mismo portafolio, diseñado para mostrar mis habilidades y proyectos en desarrollo web.</p>
+                    <a href="#" class="Boton">Ver Demo</a>
+                    <a href="#" class="Boton">Repositorio</a>
+                </article>
+
+            </div>
+        </section>
+        <section id="Habilidades">
+            <h2>Habilidades</h2>
+            <p class="habilidades-subtitulo">Las tecnologías que estoy dominando en mi ruta como desarrollador.</p>
+    
+            <div class="habilidades-container">
+
+                <div class="habilidad-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="Ícono de HTML5">
+                    <p>HTML5</p>
+                </div>
+
+                <div class="habilidad-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="Ícono de CSS3">
+                    <p>CSS3</p>
+                </div>
+
+                <div class="habilidad-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="Ícono de JavaScript">
+                    <p>JavaScript</p>
+                </div>
+
+                <div class="habilidad-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Ícono de Python">
+                    <p>Python</p>
+                </div>
+
+            </div>
+            
+        </section>
+
+        <section id="Contacto">
+            <h2>Contacto</h2>
+            <p class="contacto-subtitulo">¿Interesado en colaborar? Envíame un mensaje.</p>
+
+    <form class="contact-form">
+
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" name="email" placeholder="tu.correo@ejemplo.com" required>
+        </div>
+
+        <div class="form-group">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Hola, Mario..." required></textarea>
+        </div>
+
+        <button type="submit" class="Boton">Enviar Mensaje</button>
+
+    </form>
+        </section>
+        
+    </main>
+    <footer><p>Mario Estrella propiedad intelectual </p></footer>
+    <script src="script.js"></script>
+</body>
+</html>

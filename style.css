@@ -1,0 +1,387 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+    /* TEMA OSCURO (por defecto) */
+    --color-fondo-principal: linear-gradient(rgb(78, 169, 115), rgba(14, 24, 14, 0.879));
+    --color-fondo-secundario: rgba(0, 0, 0, 0.2);
+    --color-fondo-tarjeta: #2e7d49;
+    --color-texto-principal: white;
+    --color-texto-secundario: #ccc;
+    --color-borde: #2e7d49;
+    --color-borde-foco: yellow;
+    --color-sombra: rgba(0, 0, 0, 0.3);
+    --color-header: rgb(42, 109, 61);
+}
+
+body.light-mode {
+    /* TEMA CLARO */
+    --color-fondo-principal: #f0f2f5;
+    --color-fondo-secundario: #ffffff;
+    --color-fondo-tarjeta: #ffffff;
+    --color-texto-principal: #1c1e21;
+    --color-texto-secundario: #65676b;
+    --color-borde: #ddd;
+    --color-borde-foco: #007bff;
+    --color-sombra: rgba(0, 0, 0, 0.1);
+    --color-header: #ccc;
+}
+
+
+header{
+    position: sticky;
+    top: 0; /* distancia desde el borde superior */
+    background-color: var(--color-header);
+    color: var(--color-texto-principal);
+    padding: 15px;
+    z-index: 1000; /* para que esté encima de otros elementos */
+    
+}
+
+nav {
+    display: flex;
+    justify-content: center; /* En pantallas grandes, centra el menú */
+    align-items: center;
+    width: 100%;
+}
+
+nav ul{
+    
+    display: flex;
+    gap: 20px;
+    list-style:none ;
+    margin: 0;
+    padding: 0;
+
+}
+
+header a{
+    text-decoration: none;
+    color: black;
+}
+
+body{
+    background: var(--color-fondo-principal);
+    color: var(--color-texto-principal);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+
+
+}
+
+#Hero {
+  height: 100vh; /* ocupa toda la altura de la pantalla */
+  display: flex;
+  flex-direction: column; /* coloca h1, p y botón en columna */
+  justify-content: center; /* centra verticalmente */
+  align-items: center;     /* centra horizontalmente */
+  text-align: center;
+  color: var(--color-texto-principal);
+  padding: 0 20px; /* margen interno para que no se pegue en móviles */
+}
+
+#Hero img{
+    height: 200px;
+    border-radius: 100px;
+
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.Boton {
+    
+  padding: 12px 24px;
+  font-size: 1rem;
+  background: var(--color-borde-foco);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  display: inline-block;
+  
+
+  /* Efecto 3D */
+  box-shadow: 0 5px 0 #c9a000; /* sombra inferior simulando profundidad */
+  transition: all 0.2s ease;
+}
+
+.Boton:hover {
+  background: orange;
+}
+
+.Boton:active {
+  transform: translatey(6px); /* baja el botón */
+  box-shadow: 0 3px 0 #c9a000; /* sombra más pequeña cuando se presiona */
+}
+
+.Boton a{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+
+.menu-toggle {
+  display: none; /* Oculto por defecto en pantallas grandes */
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: var(--color-texto-principal);
+    cursor: pointer;
+    z-index: 1100; /* Asegura que esté por encima del menú desplegable */
+}
+
+/* ---- SECCIÓN DE PROYECTOS ---- */
+
+#Proyectos {
+    padding: 60px 20px; /* Espacio interno para que no se pegue a los bordes */
+    text-align: center;
+    color:var(--color-texto-principal);
+    
+}
+
+#Proyectos h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+/* El contenedor de la cuadrícula */
+.proyectos-grid {
+    display: grid; /* ¡Aquí activamos CSS Grid! */
+    
+    /* Magia para la responsividad: */
+    /* Crea columnas que se ajustan solas. Cada una tendrá un mínimo de 300px y se expandirá para ocupar el espacio disponible (1fr). */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    
+    gap: 25px; /* El espacio entre las tarjetas */
+}
+
+/* Estilos para cada tarjeta de proyecto */
+.proyecto-card {
+    background: var(--color-fondo-principal); /* Un verde un poco más claro que el header */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--color-sombra);
+    overflow: hidden; /* Asegura que la imagen no se salga de los bordes redondeados */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease; /* Efecto suave al pasar el mouse */
+}
+
+.proyecto-card:hover {
+    transform: translateY(-15px); /* Eleva la tarjeta un poco al pasar el mouse */
+}
+
+.proyecto-card img {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Mantiene una proporción de video (16:9) */
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
+}
+
+.proyecto-card h3 {
+    margin: 15px 0 10px;
+    font-size: 1.5rem;
+}
+
+.proyecto-card p {
+    padding: 0 20px;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Hace que el párrafo crezca para alinear los botones abajo */
+}
+
+.proyecto-card a.Boton {
+    margin: 5px;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+}
+
+/* Contenedor para los botones al final de la tarjeta */
+.proyecto-card div {
+    padding-bottom: 20px;
+}
+footer{
+    display: flex;
+    color:var(--color-texto-principal);
+    justify-content: center;
+}
+
+/* ---- SECCIÓN DE HABILIDADES ---- */
+
+#Habilidades {
+    padding: 60px 20px;
+    background-color: rgba(0, 0, 0, 0.2); /* Un fondo sutil para diferenciar la sección */
+    text-align: center;
+    color: var(--color-texto-principal);
+}
+
+#Habilidades h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.habilidades-subtitulo {
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    color: var(--color-fondo-secundario); /* Un gris claro para el subtítulo */
+}
+
+/* Contenedor principal de las habilidades */
+.habilidades-container {
+    display: flex; /* ¡Usamos Flexbox para alinear! */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    flex-wrap: wrap; /* Permite que las tarjetas pasen a la siguiente línea si no caben */
+    gap: 30px; /* Espacio entre cada tarjeta */
+    max-width: 800px; /* Limita el ancho máximo para que no se estire demasiado en pantallas grandes */
+    margin: 0 auto; /* Centra el contenedor en la página */
+}
+
+/* Estilo para cada tarjeta de habilidad */
+.habilidad-card {
+    background-color: #2e7d49;
+    width: 130px; /* Ancho fijo para cada tarjeta */
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el ícono y el texto */
+    gap: 15px; /* Espacio entre el ícono y el texto */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.habilidad-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 20px rgba(0, 0, 0, 0.4);
+    background-color: orange;
+}
+
+.habilidad-card img {
+    width: 60px; /* Tamaño del ícono */
+    height: 60px;
+}
+
+.habilidad-card p {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* ---- SECCIÓN DE CONTACTO ---- */
+
+#Contacto {
+    padding: 60px 20px;
+    text-align: center;
+    color: var(--color-texto-principal);
+}
+
+#Contacto h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.contacto-subtitulo {
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    color: var(--color-fondo-secundario);
+}
+
+/* El formulario en sí */
+.contact-form {
+    max-width: 600px; /* Limita el ancho del formulario para mejor lectura */
+    margin: 0 auto; /* Centra el formulario en la página */
+    text-align: left; /* Alinea el texto del formulario a la izquierda */
+}
+
+/* Contenedor para cada grupo de label + input */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block; /* Hace que el label ocupe su propia línea */
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* Estilo para los campos de texto y el área de texto */
+.form-group input,
+.form-group textarea {
+    width: 100%; /* Ocupan todo el ancho disponible */
+    padding: 12px;
+    border: 2px solid #2e7d49; /* Borde del color de las tarjetas */
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: var(--color-texto-principal); /* Color del texto que se escribe */
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+/* Estilo para cuando un campo está seleccionado (en foco) */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none; /* Quitamos el borde azul feo que pone el navegador por defecto */
+    border-color: var(--color-borde-foco); /* Cambiamos el color del borde al color de tus botones */
+}
+
+.form-group textarea {
+    resize: vertical; /* Permite que el usuario solo cambie la altura del área de texto */
+}
+
+/* Estilo para el botón del formulario */
+.contact-form .Boton {
+    width: 100%; /* El botón ocupa todo el ancho */
+    padding: 15px;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    color: var(--color-texto-principal);
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-right: 15px; /* Espacio para separarlo del menú hamburguesa */
+}
+
+/* Responsive: menú en columna para pantallas pequeñas */
+@media (max-width: 1024px) {
+    /* Mueve el botón de hamburguesa a la derecha */
+    nav {
+        justify-content: flex-end;
+    }
+    
+    /* Muestra el botón de hamburguesa */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Oculta la lista del menú por defecto */
+    nav ul {
+        display: none;
+    }
+    
+    /* Estilos para el menú cuando está activo (visible) */
+    nav ul.active {
+        display: flex;
+        flex-direction: column; /* Apila los elementos verticalmente */
+        align-items: center;   /* Centra los elementos */
+        gap: 20px;
+        
+        /* Posiciona el menú como una capa superpuesta */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh; /* Ocupa toda la altura de la pantalla */
+        background-color: rgb(42, 109, 61);
+        padding-top: 80px; /* Deja espacio para el botón de cerrar */
+    }
+}
+
