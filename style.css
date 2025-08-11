@@ -288,7 +288,7 @@ footer{
 .contacto-subtitulo {
     font-size: 1.2rem;
     margin-bottom: 50px;
-    color: var(--color-fondo-secundario);
+    color: var(--color-texto-secundario);
 }
 
 /* El formulario en sí */
