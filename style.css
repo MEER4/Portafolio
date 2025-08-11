@@ -229,7 +229,7 @@ footer{
 .habilidades-subtitulo {
     font-size: 1.2rem;
     margin-bottom: 50px;
-    color: var(--color-fondo-secundario); /* Un gris claro para el subtítulo */
+    color: var(--color-texto-secundario); /* Un gris claro para el subtítulo */
 }
 
 /* Contenedor principal de las habilidades */
