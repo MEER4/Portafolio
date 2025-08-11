@@ -167,7 +167,7 @@ html {
 .proyecto-card {
     background: var(--color-fondo-principal); /* Un verde un poco más claro que el header */
     border-radius: 10px;
-    box-shadow: 0 4px 15px var(--color-sombra);
+    box-shadow: 0 40px 15px var(--color-sombra);
     overflow: hidden; /* Asegura que la imagen no se salga de los bordes redondeados */
     display: flex;
     flex-direction: column;
